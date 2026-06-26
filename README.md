@@ -180,4 +180,8 @@ Comparison of:
 
 ---
 
+## Work in Progress
+
+Power BI dashboard development is currently in progress.
+Dashboard screenshots and the final `.pbix` file will be added upon completion.
 
