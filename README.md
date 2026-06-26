@@ -66,8 +66,7 @@ The solution follows a Star Schema design.
 ## Project Structure
 
 ```
-```text
-operations-performance-dashboard/
+operations-performance/
 
 │
 ├── data/
