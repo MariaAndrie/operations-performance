@@ -1,0 +1,5 @@
+priority_id,priority_name,sla_target_hours
+1,Low,72
+2,Medium,24
+3,High,8
+4,Critical,4

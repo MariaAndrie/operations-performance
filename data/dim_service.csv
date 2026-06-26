@@ -1,0 +1,7 @@
+service_id,service_name,criticality,primary_team_id,secondary_team_id
+1,Account & Access Management,Medium,1,2
+2,Business Applications,High,2,1
+3,Cloud & Infrastructure,High,3,4
+4,Network & Connectivity,Critical,4,3
+5,Devices & Workplace Support,Medium,5,1
+6,Security & Compliance,Critical,3,2
