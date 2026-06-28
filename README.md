@@ -10,7 +10,7 @@ The project uses a synthetic dataset to simulate an internal IT Operations envir
 
 ## Dashboard Preview
 
-![Executive Overview](./images/executive_overview.png)
+![Executive Overview](/images/executive_overview.png)
 
 ## Data Note
 
