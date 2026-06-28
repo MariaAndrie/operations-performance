@@ -8,6 +8,10 @@ The project uses a synthetic dataset to simulate an internal IT Operations envir
 
 ---
 
+## Dashboard Preview
+
+![Customer Service Executive Overview](./images/executive-overview.png)
+
 ## Data Note
 
 This project uses a synthetic dataset generated for portfolio purposes.  
