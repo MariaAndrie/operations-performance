@@ -1,10 +1,12 @@
 # Operations Performance & KPI Dashboard
 
-## Project Overview
+## Executive Summary
 
-End-to-end Business Intelligence project focused on IT Operations performance, SLA monitoring, KPI management, and service delivery analytics.
+This end-to-end Business Intelligence project analyzes the performance of a simulated internal IT service operation.
 
-The project uses a synthetic dataset to simulate an internal IT Operations environment and demonstrates how SQL and Power BI can be used to monitor operational performance, identify service bottlenecks, and support management reporting.
+The dashboard helps IT Operations managers monitor service demand, SLA compliance, customer satisfaction, escalation rates, resolution time, and open-ticket backlog.
+
+The analysis highlights underperforming teams, identifies factors associated with lower CSAT, and supports operational prioritization.
 
 ---
 
@@ -12,70 +14,120 @@ The project uses a synthetic dataset to simulate an internal IT Operations envir
 
 ### Executive Overview
 
-![Executive Overview](/images/executive_overview.png)
+![Executive Overview](images/executive_overview.png)
 
-## Data Note
+### Operational Performance
 
-This project uses a synthetic dataset generated for portfolio purposes.  
-The data does not represent any real company, customer, employee, or operational system.
-
-The dataset was designed to simulate a realistic internal IT Operations environment, including ticket volumes, SLA performance, escalations, CSAT responses, team capacity, and operational costs.
+![Operational Performance](images/operational_performance.png)
 
 ---
 
-## Business Objectives
+## Business Questions
 
-The dashboard answers the following business questions:
+The dashboard answers the following questions:
 
-* Are SLA targets being achieved?
-* Which teams have the best operational performance?
-* How do escalations affect customer satisfaction?
-* What factors influence CSAT?
-* How do ticket volumes change over time?
-* Which KPIs require management attention?
-* Where are operational issues concentrated?
-* Which teams contribute most to ticket backlog and escalations?
+- Are SLA targets being achieved?
+- How is ticket demand changing over time?
+- Which teams are missing SLA targets?
+- Which teams generate the most escalations?
+- Which teams own the largest backlog?
+- How do SLA breaches, escalations, reopened tickets, and complexity relate to CSAT?
+- Which operational areas require management attention?
+
+---
+
+## Key Insights
+
+- 2025 ticket volume reached **64,010**, an increase of approximately **11.2% YoY**.
+- SLA compliance was **78.24%**, above the **77% target**, but declined by **1.46 percentage points YoY**.
+- Ticket growth was strongest in **Q4**.
+- **Network Operations** recorded the lowest SLA compliance and the highest escalation rate.
+- Escalated tickets had an average CSAT of **3.89**, compared with **4.31** for non-escalated tickets.
+- Reopened tickets had an average CSAT of **3.94**, compared with **4.27** for tickets that were not reopened.
+- Complex tickets received lower average CSAT than simple tickets.
+- Tickets resolved after more than 72 hours had lower customer satisfaction.
+- The backlog improved month over month but remained above the prior-year level.
+
+---
+
+## Recommended Actions
+
+- Prioritize a root-cause review of Network Operations.
+- Review escalation criteria and first-line resolution capabilities.
+- Investigate the causes of reopened tickets.
+- Prepare additional capacity for Q4 demand.
+- Analyze backlog by team, service, priority, and ticket complexity.
+
 ---
 
 ## Technology Stack
 
-* MySQL
-* SQL
-* Power BI
-* DAX
-* Star Schema Data model
-* Git & GitHub
-* Python for synthetic dataset generation
+- MySQL
+- SQL
+- Power BI
+- DAX
+- Python
+- Star schema data model
+- Git and GitHub
 
 ---
 
 ## Data Model
 
-The solution follows a star schema design.
+The project uses a star schema with the following tables.
 
 ### Fact Tables
 
-* fact_tickets
-* fact_csat
-* fact_capacity
-* fact_costs
-* fact_cost_details
+- `fact_tickets`
+- `fact_csat`
+- `fact_capacity`
+- `fact_costs`
+- `fact_cost_details`
 
 ### Dimension Tables
 
-* dim_date
-* dim_team
-* dim_region
-* dim_service
-* dim_priority
+- `dim_date`
+- `dim_team`
+- `dim_region`
+- `dim_service`
+- `dim_priority`
+
+The dataset contains **121,557 tickets** covering the period from January 2024 through December 2025.
 
 ---
 
-## Project Structure
+## Data Validation
 
-```
-operations-performance/
+SQL checks were created to validate:
 
+- duplicate ticket IDs;
+- missing key values;
+- date coverage;
+- ticket-status distribution;
+- SLA-compliance distribution;
+- CSAT response rate;
+- business relationships between SLA, escalation, complexity, reopened tickets, resolution time, and CSAT.
+
+Selected findings:
+
+| Comparison | Average CSAT |
+|---|---:|
+| SLA met | 4.28 |
+| SLA breached | 4.14 |
+| Non-escalated | 4.31 |
+| Escalated | 3.89 |
+| Not reopened | 4.27 |
+| Reopened | 3.94 |
+| Simple tickets | 4.29 |
+| Complex tickets | 4.08 |
+
+These relationships are descriptive and should not be interpreted as causal.
+
+---
+
+## Repository Structure
+
+```text
 │
 ├── data/
 │   ├── dim_date.csv
@@ -94,135 +146,11 @@ operations-performance/
 │   └── 05_kpi_analysis.sql
 │
 ├── powerbi/
-│   └── operations_performance.pbix
+│   └── Operations_Performance.pbix
 │
 ├── images/
 │   ├── executive_overview.png
-│   └──  operational_performance.png
+│   └── operational_performance.png
 │
 └── README.md
 ```
-
----
-
-## Data Quality Validation
-
-The project includes automated SQL validation for:
-
-* duplicate ticket IDs
-* missing values
-* date range validation
-* ticket status distribution
-* SLA compliance distribution
-* CSAT response rate
-
----
-
-## Business Logic Validation
-
-Business rules were validated using SQL before dashboard development.
-
-Examples include:
-
-* SLA vs CSAT
-* SLA by team
-* CSAT by team
-* Escalation impact on CSAT
-* Complexity vs CSAT
-* Reopened tickets vs CSAT
-* Resolution time vs CSAT
-
----
-
-## KPI Analysis
-
-The dashboard tracks several operational KPIs:
-
-* SLA Compliance
-* Average Resolution Time
-* Escalation Rate
-* Average CSAT
-* Tickets Received
-* Open Ticket Backlog
-* Monthly SLA Trend
-* Monthly Ticket Volume
-* Monthly CSAT Trend
-* YoY and MoM KPI changes
-
----
-
-## Power BI Dashboard
-
-### Executive Overview
-
-High-level operational KPIs with monthly trends and management.
-
-The page includes:
-
-SLA target achievement
-customer satisfaction
-ticket volume
-escalation rate
-open ticket backlog
-average resolution time
-comparison with the previous year
-dynamic filters by region, team, and service
-
-### Executive Overview dashboard preview
-
-![Executive Overview](/images/executive_overview.png)
-
----
-
-### Operational Performance
-
-Performance breakdown by:
-
-* Team
-* Region
-* Service
-* Priority
-* SLA performance
-* Escalation rate
-* Resolution time
-* Backlog contribution
-* Ticket volume
-
-
-### Operational Performance dashboard preview
-
-![Operational Performance](/images/operational_performance.png)
-
-
-### KPI Scorecard
-
-Comparison of:
-
-* Actual KPI
-* Target KPI
-* KPI Status
-* Variance from target
-
-
-### KPI Scorecard preview
-
-![Performance Scorecard](/images/KPI_scorecard.png)
-
-
----
-
-## Key Insights
-
-* Overall SLA compliance is approximately 78%, above the 77% target.
-* SLA performance declined slightly compared with the previous year.
-* Ticket volume increased, with the strongest growth occurring in Q4.
-* Escalated tickets receive significantly lower CSAT scores.
-* Reopened tickets have noticeably lower customer satisfaction.
-* Complex tickets receive lower CSAT ratings than simple requests.
-* Resolution times above 72 hours are associated with lower customer satisfaction.
-* Workplace Support consistently demonstrates the highest SLA performance.
-* Network Operations shows the lowest SLA performance and the highest escalation rate.
-* The ticket backlog improved month over month, although it remains above the previous-year level.
-
----
-
