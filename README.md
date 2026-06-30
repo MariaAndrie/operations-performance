@@ -91,15 +91,14 @@ operations-performance/
 │   ├── 02_load_data.sql
 │   ├── 03_data_quality_checks.sql
 │   ├── 04_business_logic_validation.sql
-│   └── 06_kpi_analysis.sql
+│   └── 05_kpi_analysis.sql
 │
 ├── powerbi/
-│   └── Operations_Performance_Dashboard.pbix
+│   └── operations_performance.pbix
 │
 ├── images/
 │   ├── executive_overview.png
-│   ├── operational_performance.png
-│   └── KPI_scorecard.png
+│   └──  operational_performance.png
 │
 └── README.md
 ```
@@ -226,9 +225,4 @@ Comparison of:
 * The ticket backlog improved month over month, although it remains above the previous-year level.
 
 ---
-
-## Work in Progress
-
-Power BI dashboard development is currently in progress.
-Dashboard screenshots and the final `.pbix` file will be added upon completion.
 
