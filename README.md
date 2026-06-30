@@ -99,7 +99,7 @@ operations-performance/
 ├── images/
 │   ├── executive_overview.png
 │   ├── operational_performance.png
-│   └── kpi_scorecard.png
+│   └── KPI_scorecard.png
 │
 └── README.md
 ```
@@ -154,7 +154,7 @@ The dashboard tracks several operational KPIs:
 
 ---
 
-## Dashboard Pages
+## Power BI Dashboard
 
 ### Executive Overview
 
@@ -171,6 +171,12 @@ average resolution time
 comparison with the previous year
 dynamic filters by region, team, and service
 
+### Executive Overview dashboard preview
+
+![Executive Overview](/images/executive_overview.png)
+
+---
+
 ### Operational Performance
 
 Performance breakdown by:
@@ -185,6 +191,12 @@ Performance breakdown by:
 * Backlog contribution
 * Ticket volume
 
+
+### Operational Performance dashboard preview
+
+![Operational Performance](/images/operational_performance.png)
+
+
 ### KPI Scorecard
 
 Comparison of:
@@ -193,6 +205,12 @@ Comparison of:
 * Target KPI
 * KPI Status
 * Variance from target
+
+
+### KPI Scorecard preview
+
+![Performance Scorecard](/images/KPI_scorecard.png)
+
 
 ---
 
