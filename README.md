@@ -10,6 +10,8 @@ The project uses a synthetic dataset to simulate an internal IT Operations envir
 
 ## Dashboard Preview
 
+### Executive Overview
+
 ![Executive Overview](/images/executive_overview.png)
 
 ## Data Note
@@ -31,7 +33,8 @@ The dashboard answers the following business questions:
 * What factors influence CSAT?
 * How do ticket volumes change over time?
 * Which KPIs require management attention?
-
+* Where are operational issues concentrated?
+* Which teams contribute most to ticket backlog and escalations?
 ---
 
 ## Technology Stack
@@ -40,14 +43,15 @@ The dashboard answers the following business questions:
 * SQL
 * Power BI
 * DAX
-* Star Schema Data Warehouse
+* Star Schema Data model
 * Git & GitHub
+* Python for synthetic dataset generation
 
 ---
 
 ## Data Model
 
-The solution follows a Star Schema design.
+The solution follows a star schema design.
 
 ### Fact Tables
 
@@ -92,7 +96,7 @@ operations-performance/
 ├── powerbi/
 │   └── Operations_Performance_Dashboard.pbix
 │
-├── screenshots/
+├── images/
 │   ├── executive_overview.png
 │   ├── operational_performance.png
 │   └── kpi_scorecard.png
@@ -141,9 +145,12 @@ The dashboard tracks several operational KPIs:
 * Average Resolution Time
 * Escalation Rate
 * Average CSAT
+* Tickets Received
+* Open Ticket Backlog
 * Monthly SLA Trend
 * Monthly Ticket Volume
 * Monthly CSAT Trend
+* YoY and MoM KPI changes
 
 ---
 
@@ -151,7 +158,18 @@ The dashboard tracks several operational KPIs:
 
 ### Executive Overview
 
-High-level operational KPIs with monthly trends.
+High-level operational KPIs with monthly trends and management.
+
+The page includes:
+
+SLA target achievement
+customer satisfaction
+ticket volume
+escalation rate
+open ticket backlog
+average resolution time
+comparison with the previous year
+dynamic filters by region, team, and service
 
 ### Operational Performance
 
@@ -161,7 +179,11 @@ Performance breakdown by:
 * Region
 * Service
 * Priority
-* Criticality
+* SLA performance
+* Escalation rate
+* Resolution time
+* Backlog contribution
+* Ticket volume
 
 ### KPI Scorecard
 
@@ -170,17 +192,22 @@ Comparison of:
 * Actual KPI
 * Target KPI
 * KPI Status
+* Variance from target
 
 ---
 
 ## Key Insights
 
-* Overall SLA compliance is approximately **79%**, below the target of **85%**.
+* Overall SLA compliance is approximately 78%, above the 77% target.
+* SLA performance declined slightly compared with the previous year.
+* Ticket volume increased, with the strongest growth occurring in Q4.
 * Escalated tickets receive significantly lower CSAT scores.
 * Reopened tickets have noticeably lower customer satisfaction.
 * Complex tickets receive lower CSAT ratings than simple requests.
 * Resolution times above 72 hours are associated with lower customer satisfaction.
 * Workplace Support consistently demonstrates the highest SLA performance.
+* Network Operations shows the lowest SLA performance and the highest escalation rate.
+* The ticket backlog improved month over month, although it remains above the previous-year level.
 
 ---
 
