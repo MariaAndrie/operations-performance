@@ -104,8 +104,6 @@ operations-performance/
 └── README.md
 ```
 
-```
-
 ---
 
 ## Data Quality Validation
