@@ -40,7 +40,7 @@ The dashboard answers the following questions:
 
 - 2025 ticket volume reached **64,010**, an increase of approximately **11.2% YoY**.
 - SLA compliance was **78.24%**, above the **77% target**, but declined by **1.46 percentage points YoY**.
-- Ticket growth was strongest in **Q4**.
+-  Ticket volume peaked in **Q4**, indicating a recurring seasonal increase in demand.
 - **Network Operations** recorded the lowest SLA compliance and the highest escalation rate.
 - Escalated tickets had an average CSAT of **3.89**, compared with **4.31** for non-escalated tickets.
 - Reopened tickets had an average CSAT of **3.94**, compared with **4.27** for tickets that were not reopened.
@@ -106,9 +106,9 @@ SQL checks were created to validate:
 - ticket-status distribution;
 - SLA-compliance distribution;
 - CSAT response rate;
-- business relationships between SLA, escalation, complexity, reopened tickets, resolution time, and CSAT.
+- business relationships between SLA, escalation, complexity, reopened tickets, resolution time and CSAT.
 
-Selected findings:
+Selected findings across the full 2024–2025 dataset:
 
 | Comparison | Average CSAT |
 |---|---:|
@@ -159,12 +159,12 @@ These relationships are descriptive and should not be interpreted as causal.
 ## Data Note
 
 This project uses a synthetic dataset created for portfolio purposes.
-The data does not represent a real company, customer, employee, or operational system.
+The data does not represent a real company, customer, employee or operational system.
 
 ---
 
 ## Limitations
-The dataset is synthetic.
-The analysis is descriptive rather than causal.
-CSAT results are based only on survey respondents.
-Team performance may be influenced by ticket complexity, priority, and service mix.
+- The dataset is synthetic.
+- The analysis is descriptive rather than causal.
+- CSAT results are based on a survey response rate of approximately **36%**.
+- Team performance may be influenced by ticket complexity, priority, and service mix.- 
