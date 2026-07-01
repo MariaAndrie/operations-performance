@@ -13,6 +13,15 @@ where sla_met is not null;
 78.94
 */
 
+-- for year 2025
+select round(avg(sla_met)*100,2) as prct_sla_compliance
+from fact_tickets t
+join dim_date d on t.created_date = d.date
+where sla_met is not null and d.year = 2025;
+
+/*
+78.24
+*/
 
 -- =====================================================
 -- kpi 02: average resolution time
@@ -27,6 +36,16 @@ where status = 'closed';
 22.13
 */
 
+-- for year 2025
+select round(avg(resolution_hours),2) as avg_resolution_hours 
+from fact_tickets t
+join dim_date d on t.created_date = d.date
+where status = 'closed' and d.year = 2025;
+
+/*
+22.32
+*/
+
 -- =======================================================
 -- kpi 03: escalation rate
 -- purpose:
@@ -36,6 +55,16 @@ where status = 'closed';
 select round(avg(escalated)*100,2) as escalation_rate from fact_tickets;
 /*
 14.00
+*/
+
+-- for year 2025
+select round(avg(escalated)*100,2) as escalation_rate 
+from fact_tickets t
+join dim_date d on t.created_date = d.date
+where year = 2025;
+
+/*
+14.17
 */
 
 -- =====================================================
@@ -52,6 +81,15 @@ where survey_responded = 1;
 4.25
 */
 
+select round(avg(csat_score),2) as avg_csat 
+from fact_csat c
+join fact_tickets t on c.ticket_id = t.ticket_id
+join dim_date d on t.created_date = d.date 
+where survey_responded = 1 and year = 2025;
+
+/*
+4.25
+*/
 
 -- =====================================================
 -- kpi 05: monthly SLA trend
