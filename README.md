@@ -154,3 +154,17 @@ These relationships are descriptive and should not be interpreted as causal.
 │
 └── README.md
 ```
+---
+
+## Data Note
+
+This project uses a synthetic dataset created for portfolio purposes.
+The data does not represent a real company, customer, employee, or operational system.
+
+---
+
+## Limitations
+The dataset is synthetic.
+The analysis is descriptive rather than causal.
+CSAT results are based only on survey respondents.
+Team performance may be influenced by ticket complexity, priority, and service mix.
